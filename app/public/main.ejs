@@ -1,49 +1,120 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./recursos/css/bootstrap.css">
-    <title>Inicio</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./recursos/css/bt/bootstrap.min.css">
+  <link rel="stylesheet" href="./recursos/css/estilo.css">
+  <title>Inicio</title>
 </head>
+
 <body style="background-color: whitesmoke;">
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="#">Navbar</a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">Home</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Link</a>
-              </li>
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  Dropdown
-                </a>
-                <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="#">Action</a></li>
-                  <li><a class="dropdown-item" href="#">Another action</a></li>
-                  <li><hr class="dropdown-divider"></li>
-                  <li><a class="dropdown-item" href="#">Something else here</a></li>
-                </ul>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link disabled">Disabled</a>
-              </li>
-            </ul>
-            <form class="d-flex" role="search">
-              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-              <button class="btn btn-outline-success" type="submit">Search</button>
-            </form>
+
+  <!--Boton flotante-->
+
+
+
+
+
+  <!--NavBar-->
+  <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid">
+      <img src="./recursos/img/logo.png" class="navbar-brand" style="width: 10%;" alt="" srcset="">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Inicio</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Registrar personas</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Ingresos</a>
+          </li>
+         
+         
+        </ul>
+        <form class="d-flex" role="search">
+          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success" type="submit">Search</button>
+        </form>
+      </div>
+    </div>
+  </nav>
+
+  <!--Imagen-Bienvenida-->
+
+  <!--Seccion_Nosotros-->
+  <div class="contenedor_carousel">
+    <div class="row">
+      <!--Carousel-->
+      <div class="col-md-4">
+        <div id="miCarousel" class="carousel slide" data-bs-ride="carousel">
+          <ol class="carousel-indicators">
+            <li data-bs-target="#miCarousel" data-bs-slide-to="0" class="active"></li>
+            <li data-bs-target="#miCarousel" data-bs-slide-to="1"></li>
+            <li data-bs-target="#miCarousel" data-bs-slide-to="2"></li>
+          </ol>
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img src="https://picsum.photos/id/100/800/400" class="d-block w-100" alt="Imagen 1">
+            </div>
+            <div class="carousel-item">
+              <img src="https://picsum.photos/id/200/800/400" class="d-block w-100" alt="Imagen 2">
+            </div>
+            <div class="carousel-item">
+              <img src="https://picsum.photos/id/300/800/400" class="d-block w-100" alt="Imagen 3">
+            </div>
           </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#miCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Anterior</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#miCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Siguiente</span>
+          </button>
         </div>
-      </nav>
+      </div>
+      <!--Información-->
+      <div class="col-md-8">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio vero ea atque? Rerum aliquid, neque enim quaerat,
+        explicabo officia voluptatem accusantium atque nostrum repudiandae harum a vero totam quam labore.
+      </div>
+    </div>
+  </div>
+
+  <!--Formulario-->
+  <div class="formulario">
+    <!--Titulo-->
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 mx-auto" style="text-align: center;">
+          <h1>Contactanos</h1>
+        </div>
+      </div>
+    </div>
+    <!--Información contenedor-->
+    <div class="row formulario_contenedor">
+      <div class="col-md-6">
+        <img src="./recursos/img/gmail.png" class="img" alt="" srcset="">
+      </div>
+      <div class="col-md-6 formulario_contenedor">
+        <input type="text" class="input_form ">
+        <input type="text" class="input_form">
+        <input type="text" class="input_form">
+      </div>
+    </div>
+  </div>
+
 </body>
-<script src="./recursos/js/bootstrap.bundle.js"></script>
+<script src="./recursos/js/bt/bootstrap.min.js"></script>
+<script src="./recursos/js/funcionalidades.js"></script>
+
 </html>

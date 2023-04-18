@@ -1,0 +1,37 @@
+.carousel {
+    max-width: 800px;
+    margin: auto;
+    position: relative;
+}
+
+.contenedor_carousel {
+    padding: 1%;
+    width: 100%;
+    background-color: whitesmoke;
+}
+
+.formulario {
+    margin-top: 1%;
+    margin-bottom: 1%;
+    padding: 1%;
+}
+
+.formulario .input_form {
+    width: 70%;
+    border-radius: 20px;
+    border-width: 0px;
+    box-shadow: 10px 10px 10px -5px rgba(163, 163, 163, 1);
+    padding: 1.5%;
+    margin: 2.5%;
+    max-height: 500px;
+}
+
+.formulario .formulario_contenedor{
+    text-align: center;
+    margin-top: 2%;
+}
+
+.formulario .img{
+    width: 50%;
+}
+

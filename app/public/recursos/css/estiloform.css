@@ -1,0 +1,15 @@
+.contendero_form{
+    margin-top: 2%;
+    margin-bottom: 2%;
+    background-color: whitesmoke;
+    border-radius: 20px;
+    padding: 3%;
+}
+
+.input_form{
+    border-radius: 20px;
+    padding: 3%;
+    margin: 5%;
+    border-width: 0px;
+
+}

@@ -7,7 +7,7 @@ const env = require('dotenv')
 app.set('view engine', 'ejs');
 app.set('views', __dirname + '/public');
 //Motor de recursos
-app.use(express.static(__dirname + '/public'));
+app.use(express.static(__dirname + '/public/recursos'));
 
 //Configuracion rutas
 const routes = require('./backend/Rutes/rt');

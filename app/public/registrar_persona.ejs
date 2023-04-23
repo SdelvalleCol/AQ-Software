@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/bt/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/estiloform.css">
+    <title>Registro</title>
+</head>
+
+<body>
+    <!--NavBar-->
+    <div>
+        <%- include (navbar) %>
+    </div>
+
+    <!--DATOS USUARIO-->
+    <div class="row ">
+        <div class="col-md-2"></div>
+        <div class="col-md-8 contendero_form">
+            <div class="row titulo">
+                <div> Datos usuario </div>
+            </div>
+            <div class="row">
+                <div class="col-md-3">
+                    <input type="number" class="input_form" placeholder="Cédula">
+                </div>
+                <div class="col-md-3">
+                    <input type="text" class="input_form" placeholder="Nombre">
+                </div>
+                <div class="col-md-3">
+                    <input type="number" class="input_form" placeholder="Edad">
+                </div>
+                <div class="col-md-3">
+                    <input type="number" class="input_form" placeholder="Telefono">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="row sectionp">
+                        <label for="menu">Seleccione el sexo:</label>
+                        <select id="menu" class="input_form">
+                            <option value="Masculino">Masculino</option>
+                            <option value="Femenino">Femenino</option>
+                            <option value="No Binario">No binario</option>
+                            <option value="No definido">No definido</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="row sectionp">
+                        <label for="menu-res">Seleccione el tipo de persona:</label>
+                        <select id="menu-res" class="input_form">
+                            <option value=0>Residente</option>
+                            <option value=1>Visitante</option>
+                            <option value=3>Celador</option>
+                            <option value=4>Limpieza y servicios</option>
+                            <option value=5>Otros</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-md-4 sectiony">
+                    <button onclick="registrar_persona()">Hola</button>
+                </div>
+            </div>
+           
+        </div>
+        
+        <div class="col-md-2"></div>
+    </div>
+
+
+</body>
+<script src="../js/bt/bootstrap.min.js"></script>
+<script src="../js/funcionalidadform.js"></script>
+
+</html>

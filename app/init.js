@@ -1,8 +1,11 @@
 const express = require('express')
 const app = express()
 const env = require('dotenv')
+const bodyParser = require('body-parser');
 
 //Configuracion de archivos
+// Configura el middleware body-parser
+app.use(bodyParser.json());
 //Motor de plantilla
 app.set('view engine', 'ejs');
 app.set('views', __dirname + '/public');

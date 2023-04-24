@@ -56,9 +56,9 @@ async function registrar_visita() {
     if (cedula) {
         if (iscoche) {
             if (matricula != "" && ciudad != "") {
-                const data ={cedula:cedula, matricula : matricula , ciudad:ciudad}
+                const data = { cedula: cedula, matricula: matricula, ciudad: ciudad }
                 //Registrar entrada y coche
-                    await fetch('http://localhost:5000/registrar/vehiculo/visita', {
+                await fetch('http://localhost:5000/registrar/vehiculo/visita', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json'
@@ -90,6 +90,4 @@ async function registrar_visita() {
     } else {
         console.log("Rellene los datos")
     }
-
-
 }

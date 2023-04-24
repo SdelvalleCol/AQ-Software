@@ -1,19 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/bt/bootstrap.min.css">
     <link rel="stylesheet" href="../css/estiloform.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/jquery.dataTables.css" />
     <title>registrar Entrada</title>
 </head>
+
 <body>
     <!--NavBar-->
     <div>
         <%- include (navbar) %>
     </div>
+
+    <table style="margin: 5%;" id="tabla" class="display">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Cedula</th>
+                <th>Tipo</th>
+                <th>Ingreso</th>
+                <th>Egreso</th>
+                <th>Matricula</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="../js/bt/bootstrap.min.js"></script>
+    <script src="../js/funcionalidatabla.js"></script>
+    <script src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.min.js"></script>
 </body>
-<script src="../js/bt/bootstrap.min.js"></script>
-<script src="../js/funcionalidadform.js"></script>
+
 </html>

@@ -104,5 +104,17 @@ router.post('/registrar/vehiculo/visita', (req, res) => {
   }
 });
 
+//Obtener registros
+router.get('/obtener/registro', (req, res) => {
+  try {
+    pool.query(`SELECT * from entradas`,(error,result)=>{
+      res.json(result)
+    })
+  } catch (e) {
+    console.log(e)
+    res.json(0)
+  }
+});
+
 
 module.exports = router;

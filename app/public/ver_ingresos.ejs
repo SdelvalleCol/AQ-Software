@@ -17,19 +17,73 @@
         <%- include (navbar) %>
     </div>
 
-    <table style="margin: 5%;" id="tabla" class="display">
-        <thead>
-            <tr>
-                <th>ID</th>
-                <th>Cedula</th>
-                <th>Tipo</th>
-                <th>Ingreso</th>
-                <th>Egreso</th>
-                <th>Matricula</th>
-            </tr>
-        </thead>
-        <tbody></tbody>
-    </table>
+    <!--Alerta-->
+    <div class="alert alert-success" role="alert" id="miAlerta" style="display:none;">
+        ¡Operación exitosa!
+      </div>
+
+    <!-- Modal Editar -->
+    <div class="modal fade" id="myModalbb" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Editar parametro</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div id="modal-cuerpo" class="modal-body">
+                    
+                </div>
+                <div id="botones_editar" class="modal-footer">
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal borrar -->
+    <div class="modal fade" id="myModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Borrar registro</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div id="modal-cuerpo" class="modal-body">
+                    <p>¿Esta seguro de borrar este registro?</p>
+                </div>
+                <div id="confirmacion_borrar" class="modal-footer">
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- Tabla -->
+    <div class="row">
+        <div class="col-md-1"></div>
+        <div class="col-md-10 table">
+            <table id="tabla">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Cedula</th>
+                        <th>Tipo</th>
+                        <th>Ingreso</th>
+                        <th>Egreso</th>
+                        <th>Matricula</th>
+                        <th>Modificar</th>
+                        <th>Borrar</th>
+                    </tr>
+
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+        <div class="col-md-1"></div>
+    </div>
+
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="../js/bt/bootstrap.min.js"></script>
     <script src="../js/funcionalidatabla.js"></script>

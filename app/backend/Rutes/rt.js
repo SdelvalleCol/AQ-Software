@@ -32,14 +32,20 @@ router.post('/registrar/usuario', (req, res) => {
       const valor = JSON.parse(respuesta["ver_usuario(" + cuerpo.cedula + ")"]);
       const id_final = valor["persona_id"]
       if (id_final == null) {
-        pool.query(`CALL insertar_usuario(${cuerpo.cedula},'${cuerpo.nombre}',${cuerpo.edad},${cuerpo.telefono},'${cuerpo.sexo}',${cuerpo.tipo})`)
+        pool.query(`CALL insertar_usuario(${cuerpo.cedula},'${cuerpo.nombre}',${cuerpo.edad},${cuerpo.telefono},'${cuerpo.sexo}',${cuerpo.tipo})`,(error,resultado)=>{
+          if(error){
+            res.json("Error detectado")
+          }else{
+            res.json("0")
+          }
+        })
       }else{
         res.json("Usuario ya creado")
       }
     })
   } catch (e) {
     console.log(e)
-    res.json(0)
+    res.json("Error detectado")
   }
 });
 
@@ -55,18 +61,16 @@ router.post('/registrar/usuario/visita', (req, res) => {
       if (id_final != null) {
         pool.query(`CALL insertar_registro(${id_final},${tipo},${0})`, (error2, resultado2) => {
           if (error2) {
-            console.log(error2)
+            res.json("1")
           } else {
-            res.json("Yeah")
+            res.json("0")
           }
         })
-      } else {
-        res.json("No existe")
       }
     })
   } catch (e) {
     console.log(e)
-    res.json(0)
+    res.json("1")
   }
 });
 
@@ -82,22 +86,49 @@ router.post('/registrar/vehiculo/visita', (req, res) => {
       if (id_final != null) {
         pool.query(`CALL insertar_registro_coche('${cuerpo.matricula}','${cuerpo.ciudad}',${cuerpo.cedula})`, (error2, resultado2) => {
           if (error2) {
-            res.json("ERROR")
+            res.json("1")
           } else {
             pool.query(`CALL insertar_registro(${id_final},${tipo},'${cuerpo.matricula}')`, (error3, resultado3) => {
               if (error3) {
-                console.log(error3)
+                res.json("1")
               } else {
-                res.json("Exito")
+                res.json("0")
               }
             })
           }
         })
 
       } else {
-        res.json("No existe")
+        res.json("1")
       }
     })
+  } catch (e) {
+    console.log(e)
+    res.json("1")
+  }
+});
+
+//Borrar Registro
+router.post('/borrar/registro', (req, res) => {
+  try {
+    const cuerpo = req.body;
+    pool.query(`CALL borrar_registro(${cuerpo.id})`)
+    res.json("YEAH")
+  } catch (e) {
+    console.log(e)
+  }
+});
+
+//modificar registro
+router.post('/modificar/registro', (req, res) => {
+  var cuerpo = req.body
+  try {
+    pool.query(`CALL actualizar_datos(${cuerpo.id},${cuerpo.cedula},${cuerpo.tipo},'${cuerpo.ingreso}','${cuerpo.egreso}','${cuerpo.matricula}')`,(error,result)=>{
+      if(error){
+        console.log(error)
+      }
+    },)
+    res.json("xd")
   } catch (e) {
     console.log(e)
     res.json(0)
@@ -115,6 +146,7 @@ router.get('/obtener/registro', (req, res) => {
     res.json(0)
   }
 });
+
 
 
 module.exports = router;

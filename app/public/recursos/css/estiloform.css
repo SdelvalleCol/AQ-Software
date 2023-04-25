@@ -41,3 +41,23 @@
     text-align: center;
 }
 
+.table{
+    width: 80%;
+    text-align: center;
+    margin: 3%;
+}
+
+.modal-dialog {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+  }
+
+.texto{
+    text-align: center;
+}
+
+.caja{
+    width: 50%;
+}

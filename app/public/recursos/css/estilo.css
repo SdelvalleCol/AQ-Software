@@ -35,3 +35,13 @@
     width: 50%;
 }
 
+.imagen-fondo {
+    background-image: url("../img/fondo1.svg");
+    background-size: cover; /* Ajustar tamaño de la imagen para cubrir todo el ancho y alto de la div */
+    background-position: center; /* Posicionar la imagen en el centro de la div */
+    height: 700px; /* Altura de la div */
+    color: white; /* Color del texto en la div */
+    text-align: center; /* Alinear el texto en el centro de la div */
+    padding-top: 150px; /* Espacio entre el borde superior de la div y el contenido */
+  }
+  

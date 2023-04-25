@@ -1,13 +1,34 @@
 async function borrar_parametro(id_x) {
   data = { id: id_x }
-  await fetch('http://localhost:5000/borrar/registro', {
+  var response = await fetch('http://localhost:5000/borrar/registro', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'
     },
     body: JSON.stringify(data)
   })
-  location.reload();
+
+  var respuesta = await response.json()
+  if (respuesta == "0") {
+    const alerta = document.getElementById("miAlerta")
+    alerta.innerHTML = "Operacion exitosa"
+    alerta.style.display = "flex"
+    setTimeout(function x() {
+      alerta.style.display = "none"
+    }, 2000);
+  } else {
+    const alerta = document.getElementById("mialertan")
+    alerta.innerHTML = "Error"
+    alerta.style.display = "flex"
+    setTimeout(function x() {
+      alerta.style.display = "none"
+    }, 2000);
+  }
+  setTimeout(function i() {
+    location.reload();
+  }, 1000)
+
+
 
 }
 
@@ -15,18 +36,36 @@ async function editar_parametros(item) {
   var entrada = item;
   var cedula = document.getElementById("numero_cedula").value;
   var tipo = document.getElementById("menu-res-cas-int").value;
-  var ingreso =document.getElementById("ingreso_fecha").value;
+  var ingreso = document.getElementById("ingreso_fecha").value;
   var egreso = document.getElementById("egreso_fecha").value;
   var matricula = document.getElementById("cuerpo_matri").value
   data = { id: entrada, cedula: cedula, tipo: tipo, ingreso: ingreso, egreso: egreso, matricula: matricula }
-  await fetch('http://localhost:5000/modificar/registro', {
+  var response = await fetch('http://localhost:5000/modificar/registro', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'
     },
     body: JSON.stringify(data)
   })
-  location.reload();
+  var respues = await response.json()
+  if (respues == "0") {
+    const alerta = document.getElementById("miAlerta")
+    alerta.innerHTML = "Operacion exitosa"
+    alerta.style.display = "flex"
+    setTimeout(function x() {
+      alerta.style.display = "none"
+    }, 2000);
+  } else {
+    const alerta = document.getElementById("mialertan")
+    alerta.innerHTML = "Error"
+    alerta.style.display = "flex"
+    setTimeout(function x() {
+      alerta.style.display = "none"
+    }, 2000);
+  }
+  setTimeout(function i() {
+    location.reload();
+  }, 1000)
 }
 
 $(document).ready(function () {
@@ -99,7 +138,7 @@ $(document).ready(function () {
             <input id="cuerpo_matri" value =${item.matricula} type="text">
         </div>
     </div>`
-  
+
         //Cuerpo
         document.getElementById("botones_editar").innerHTML = `<button type="button" class="btn btn-success" data-bs-dismiss="modal">Cerrar</button>
     <button type="button" onclick = "editar_parametros(${item.idingreso})" class="btn btn-danger">Guardar</button>`

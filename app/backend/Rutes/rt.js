@@ -113,9 +113,10 @@ router.post('/borrar/registro', (req, res) => {
   try {
     const cuerpo = req.body;
     pool.query(`CALL borrar_registro(${cuerpo.id})`)
-    res.json("YEAH")
+    res.json("0")
   } catch (e) {
     console.log(e)
+    res.json("1")
   }
 });
 
@@ -126,12 +127,15 @@ router.post('/modificar/registro', (req, res) => {
     pool.query(`CALL actualizar_datos(${cuerpo.id},${cuerpo.cedula},${cuerpo.tipo},'${cuerpo.ingreso}','${cuerpo.egreso}','${cuerpo.matricula}')`,(error,result)=>{
       if(error){
         console.log(error)
+        res.json("1")
+      }else{
+        res.json("0")
       }
     },)
-    res.json("xd")
+
   } catch (e) {
     console.log(e)
-    res.json(0)
+    res.json("1")
   }
 });
 

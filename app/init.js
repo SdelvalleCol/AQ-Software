@@ -1,6 +1,7 @@
 const express = require('express')
 const app = express()
 const env = require('dotenv')
+const cors = require('cors');
 const bodyParser = require('body-parser');
 
 //Configuracion de archivos
@@ -12,9 +13,13 @@ app.set('views', __dirname + '/public');
 //Motor de recursos
 app.use(express.static(__dirname + '/public/recursos'));
 
+//IPS VALIDAS
+app.use(cors());
+
 //Configuracion rutas
 const routes = require('./backend/Rutes/rt');
 app.use('/', routes);
+
 
 //Arranque servidor
 app.listen(5000, () => 
